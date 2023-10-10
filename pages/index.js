@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <main
-      className={`flex flex-col mx-10 md:m-auto md:max-w-lg text-xl md:text-2xl min-h-screen ${architectsDaughter.className}`}
+      className={`flex flex-col mx-10 md:m-auto md:max-w-lg text-2xl min-h-screen ${architectsDaughter.className}`}
     >
       {loading && <p>Loading...</p>}
       {!loading && (
