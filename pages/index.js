@@ -40,7 +40,7 @@ export default function Home() {
           property="og:image:alt"
           content="A note of inspiration from future you!"
         />
-        {/* <meta property="og:image" content={"preview.png"} /> */}
+        <meta property="og:image" content={"linkpreview.jpg"} />
       </Head>
       <main
         className={`flex flex-col mx-10 md:m-auto md:max-w-lg text-2xl min-h-screen ${architectsDaughter.className}`}
