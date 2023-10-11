@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #f8fafc;
-  color: #030712;
+body * {
+  @apply transition-colors duration-300;
 }

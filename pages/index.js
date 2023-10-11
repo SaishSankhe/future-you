@@ -1,5 +1,7 @@
+import ModeButton from "@/components/ModeButton";
 import Note from "@/components/Note";
 import getNote from "@/utils/getRandomNote";
+
 import { Delius } from "next/font/google";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -43,14 +45,12 @@ export default function Home() {
         />
         <meta property="og:image" content={"linkpreview.jpg"} />
       </Head>
-      <main
-        className={`flex flex-col mx-10 md:m-auto md:max-w-2xl text-2xl md:text-3xl min-h-screen ${delius.className}`}
-      >
-        {loading && <p className="m-auto">Loading...</p>}
-        {!loading && <Note note={note} />}
-        {/* <button className="border border-black p-2" onClick={handleButtonClick}>
-        Generate Random Name
-      </button> */}
+      <main className={`${delius.className}`}>
+        <ModeButton />
+        <div className="note flex flex-col mx-10 md:m-auto md:max-w-2xl text-2xl md:text-3xl min-h-screen">
+          {loading && <p className="m-auto">Loading...</p>}
+          {!loading && <Note note={note} />}
+        </div>
       </main>
     </>
   );
