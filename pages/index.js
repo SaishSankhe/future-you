@@ -1,9 +1,10 @@
+import Note from "@/components/Note";
 import getNote from "@/utils/getRandomNote";
-import { Architects_Daughter } from "next/font/google";
+import { Delius } from "next/font/google";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
-const architectsDaughter = Architects_Daughter({
+const delius = Delius({
   subsets: ["latin"],
   weight: "400",
 });
@@ -43,17 +44,10 @@ export default function Home() {
         <meta property="og:image" content={"linkpreview.jpg"} />
       </Head>
       <main
-        className={`flex flex-col mx-10 md:m-auto md:max-w-lg text-2xl min-h-screen ${architectsDaughter.className}`}
+        className={`flex flex-col mx-10 md:m-auto md:max-w-lg text-2xl min-h-screen ${delius.className}`}
       >
         {loading && <p className="m-auto">Loading...</p>}
-        {!loading && (
-          <div className="m-auto leading-normal md:leading-8">
-            <p>{note.salutation},</p>
-            <p className="my-4">{note.note}</p>
-            <p>{note.closing},</p>
-            <p>Future you</p>
-          </div>
-        )}
+        {!loading && <Note note={note} />}
         <br />
         {/* <button className="border border-black p-2" onClick={handleButtonClick}>
         Generate Random Name
