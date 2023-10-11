@@ -5,25 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
-  purge: {
-    enabled: true,
-    content: ["./pages/**/*.js", "./components/**/*.js"],
-    options: {
-      safelist: ["dark"], //specific classes
+  theme: {
+    extend: {
+      colors: {
+        bg: "hsl(var(--color-bg) / <alpha-value>)",
+        content: "hsl(var(--color-content) / <alpha-value>)",
+      },
     },
   },
-  theme: {
-    typography: (theme) => ({
-      dark: {
-        css: {
-          color: "white",
-        },
-      },
-    }),
-    extend: {},
-  },
-  variants: {
-    typography: ["dark"],
-  },
-  plugins: [require("@tailwindcss/typography")],
 };
