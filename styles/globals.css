@@ -21,6 +21,12 @@
   }
 }
 
+.note {
+  @apply transition-colors duration-300;
+}
+
 body * {
   @apply transition-colors duration-300;
 }
+
+
