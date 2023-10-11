@@ -44,11 +44,10 @@ export default function Home() {
         <meta property="og:image" content={"linkpreview.jpg"} />
       </Head>
       <main
-        className={`flex flex-col mx-10 md:m-auto md:max-w-lg text-2xl min-h-screen ${delius.className}`}
+        className={`flex flex-col mx-10 md:m-auto md:max-w-2xl text-2xl md:text-3xl min-h-screen ${delius.className}`}
       >
         {loading && <p className="m-auto">Loading...</p>}
         {!loading && <Note note={note} />}
-        <br />
         {/* <button className="border border-black p-2" onClick={handleButtonClick}>
         Generate Random Name
       </button> */}

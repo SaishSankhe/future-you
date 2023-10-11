@@ -1,9 +1,9 @@
 import closings from "@/data/closings";
-import notes from "@/data/notes";
+import messages from "@/data/messages";
 import salutations from "@/data/salutations";
 
 const TOTAL = {
-  notes: notes.length - 1,
+  messages: messages.length - 1,
   closings: closings.length - 1,
   salutations: salutations.length - 1,
 };
@@ -15,7 +15,7 @@ const getRandom = (max) => {
 export default function getNote() {
   return {
     salutation: salutations[getRandom(TOTAL.salutations)],
-    note: notes[getRandom(TOTAL.notes)],
+    body: messages[getRandom(TOTAL.messages)],
     closing: closings[getRandom(TOTAL.closings)],
   };
 }
