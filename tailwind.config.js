@@ -13,9 +13,17 @@ module.exports = {
     },
   },
   theme: {
-    typography: (theme) => ({}),
+    typography: (theme) => ({
+      dark: {
+        css: {
+          color: "white",
+        },
+      },
+    }),
     extend: {},
   },
-  variants: {},
+  variants: {
+    typography: ["dark"],
+  },
   plugins: [require("@tailwindcss/typography")],
 };

@@ -1,6 +1,9 @@
-import ModeButton from "@/components/ModeButton";
 import Note from "@/components/Note";
 import getNote from "@/utils/getRandomNote";
+import dynamic from "next/dynamic";
+const ThemeToggle = dynamic(() => import("@/components/ThemeToggle"), {
+  ssr: false,
+});
 
 import { Delius } from "next/font/google";
 import Head from "next/head";
@@ -22,10 +25,10 @@ export default function Home() {
     setLoading(false);
   }, []);
 
-  const handleButtonClick = () => {
-    const newNote = getNote();
-    setNote(newNote);
-  };
+  // const handleButtonClick = () => {
+  //   const newNote = getNote();
+  //   setNote(newNote);
+  // };
 
   return (
     <>
@@ -46,7 +49,7 @@ export default function Home() {
         <meta property="og:image" content={"linkpreview.jpg"} />
       </Head>
       <main className={`${delius.className}`}>
-        <ModeButton />
+        <ThemeToggle />
         <div className="note flex flex-col mx-10 md:m-auto md:max-w-2xl text-2xl md:text-3xl min-h-screen">
           {loading && <p className="m-auto">Loading...</p>}
           {!loading && <Note note={note} />}
