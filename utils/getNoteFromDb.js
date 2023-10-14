@@ -17,8 +17,11 @@ async function getTotalCounts() {
   };
 }
 
-async function getDataAtWithId(table, id) {
-  const { data, error } = await supabase.from(table).select("*").eq("id", id);
+async function getDataAtWithId(tableName, id) {
+  const { data, error } = await supabase
+    .from(tableName)
+    .select("*")
+    .eq("id", id);
   return data[0].data;
 }
 
