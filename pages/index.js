@@ -1,5 +1,6 @@
 import Note from "@/components/Note";
-import getNote from "@/utils/getRandomNote";
+import getNote from "@/utils/getNoteFromDb";
+// import getNote from "@/utils/getRandomNote";
 import dynamic from "next/dynamic";
 const ThemeToggle = dynamic(() => import("@/components/ThemeToggle"), {
   ssr: false,
@@ -16,12 +17,15 @@ const delius = Delius({
 
 export default function Home() {
   const [note, setNote] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    const note = getNote();
-    setNote(note);
+    const getNoteFromDb = async () => {
+      const note = await getNote();
+      setNote(note);
+    };
+    getNoteFromDb();
     setLoading(false);
   }, []);
 
@@ -50,9 +54,12 @@ export default function Home() {
       </Head>
       <main className={`${delius.className}`}>
         <ThemeToggle />
-        <div className="note flex flex-col mx-10 md:m-auto md:max-w-2xl text-2xl md:text-3xl min-h-screen">
-          {loading && <p className="m-auto">Loading...</p>}
-          {!loading && <Note note={note} />}
+        <div className="note flex flex-col mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
+          {loading ? (
+            <p className="m-auto">Loading...</p>
+          ) : (
+            <Note note={note} />
+          )}
         </div>
       </main>
     </>
