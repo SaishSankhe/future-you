@@ -21,13 +21,11 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // setLoading(true);
     const getNoteFromDb = async () => {
       const note = await getNote();
       setNote(note);
     };
     getNoteFromDb();
-    // setLoading(false);
   }, []);
 
   // const handleButtonClick = () => {
@@ -56,13 +54,13 @@ export default function Home() {
       <main className={`${delius.className}`}>
         <ThemeToggle />
 
-        <div className="note flex flex-col justify-center items-center mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
+        <div className="flex flex-col justify-center items-center mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
           {loading ? (
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .changeDelay(75)
-                  .typeString("Your letter is time travelling . . . ")
+                  .typeString("Your letter is time travelling . . .")
                   .pauseFor(500)
                   .deleteAll()
                   .pauseFor(250)
