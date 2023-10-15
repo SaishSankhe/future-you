@@ -1,10 +1,11 @@
 import Note from "@/components/Note";
 import getNote from "@/utils/getNoteFromDb";
-// import getNote from "@/utils/getRandomNote";
 import dynamic from "next/dynamic";
 const ThemeToggle = dynamic(() => import("@/components/ThemeToggle"), {
   ssr: false,
 });
+
+import Typewriter from "typewriter-effect";
 
 import { Delius } from "next/font/google";
 import Head from "next/head";
@@ -20,13 +21,13 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
     const getNoteFromDb = async () => {
       const note = await getNote();
       setNote(note);
     };
     getNoteFromDb();
-    setLoading(false);
+    // setLoading(false);
   }, []);
 
   // const handleButtonClick = () => {
@@ -54,9 +55,21 @@ export default function Home() {
       </Head>
       <main className={`${delius.className}`}>
         <ThemeToggle />
-        <div className="note flex flex-col mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
+
+        <div className="note flex flex-col justify-center items-center mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
           {loading ? (
-            <p className="m-auto">Loading...</p>
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .changeDelay(75)
+                  .typeString("Your letter is time travelling . . . ")
+                  .pauseFor(500)
+                  .deleteAll()
+                  .pauseFor(250)
+                  .start()
+                  .callFunction(() => setLoading(false));
+              }}
+            />
           ) : (
             <Note note={note} />
           )}
