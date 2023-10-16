@@ -26,7 +26,7 @@ async function getDataAtWithId(tableName, id) {
 }
 
 const getRandom = (max) => {
-  return Math.floor(Math.random() * max) + 1;
+  return Math.floor(Math.random() * max);
 };
 
 export default async function getNote() {
@@ -35,10 +35,10 @@ export default async function getNote() {
   const note = {
     salutation: await getDataAtWithId(
       "salutations",
-      getRandom(TOTAL.salutations)
+      getRandom(TOTAL.salutations) + 1
     ),
-    body: await getDataAtWithId("messages", getRandom(TOTAL.messages)),
-    closing: await getDataAtWithId("closings", getRandom(TOTAL.closings)),
+    body: await getDataAtWithId("messages", getRandom(TOTAL.messages) + 1),
+    closing: await getDataAtWithId("closings", getRandom(TOTAL.closings) + 1),
   };
 
   console.log(note);

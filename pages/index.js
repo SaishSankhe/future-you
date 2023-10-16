@@ -1,15 +1,13 @@
+import Loading from "@/components/Loading";
 import Note from "@/components/Note";
 import getNote from "@/utils/getNoteFromDb";
 import dynamic from "next/dynamic";
-const ThemeToggle = dynamic(() => import("@/components/ThemeToggle"), {
-  ssr: false,
-});
-
-import Typewriter from "typewriter-effect";
-
 import { Delius } from "next/font/google";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+const ThemeToggle = dynamic(() => import("@/components/ThemeToggle"), {
+  ssr: false,
+});
 
 const delius = Delius({
   subsets: ["latin"],
@@ -55,22 +53,7 @@ export default function Home() {
         <ThemeToggle />
 
         <div className="flex flex-col justify-center items-center mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
-          {loading ? (
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .changeDelay(75)
-                  .typeString("Your letter is time travelling . . .")
-                  .pauseFor(500)
-                  .deleteAll()
-                  .pauseFor(250)
-                  .start()
-                  .callFunction(() => setLoading(false));
-              }}
-            />
-          ) : (
-            <Note note={note} />
-          )}
+          {loading ? <Loading setLoading={setLoading} /> : <Note note={note} />}
         </div>
       </main>
     </>
