@@ -41,6 +41,5 @@ export default async function getNote() {
     closing: await getDataAtWithId("closings", getRandom(TOTAL.closings) + 1),
   };
 
-  console.log(note);
   return note;
 }
