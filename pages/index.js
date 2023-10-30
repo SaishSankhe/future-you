@@ -47,7 +47,7 @@ export default function Home() {
           property="og:image:alt"
           content="A note of inspiration from future you!"
         />
-        <meta property="og:image" content={"linkpreview.jpg"} />
+        <meta property="og:image" content={"/images/linkpreview.jpg"} />
       </Head>
       <main className={`${delius.className}`}>
         <ThemeToggle />

@@ -1,40 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## From Future You 📮
 
-## Getting Started
+_Imagine you are feeling demotivated, sad and everything is going wrong 😞, and at that moment, your future self appears right in front of you and tells you that everything turned out great in the future and you are extremely successful!_ 🎊 😄
 
-First, run the development server:
+**That's what this application does! Whenever you feel down, open this app and get a motivational letter From Future You.** 💌
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ➡️ [_Get motivated now!_](https://fromfutureyou.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr/>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Screenshots
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<p align="center">
+  <img src="public/futureyou.gif" alt="A gif of a letter from future you (light mode)" title="A letter from future you gif" width="70%">
+</p>
+<p align="center">
+  <img src="public/images/screenshot-1.png" alt="A letter from future you (dark mode)" title="A letter from future you" width="70%">
+</p>
+<p align="center">
+  <img src="public/images/screenshot-2.png" alt="A letter from future you (light mode)" title="A letter from future you" width="70%">
+</p>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tech-stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Supabase](https://supabase.com/)
