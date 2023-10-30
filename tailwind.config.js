@@ -6,11 +6,6 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    extend: {
-      colors: {
-        bg: "hsl(var(--color-bg) / <alpha-value>)",
-        content: "hsl(var(--color-content) / <alpha-value>)",
-      },
-    },
+    extend: {},
   },
 };
