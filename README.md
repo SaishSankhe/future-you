@@ -10,9 +10,9 @@ _Imagine you are feeling demotivated, sad and everything is going wrong 😞, an
 
 ## Screenshots
 
-<!-- <p align="center">
+<p align="center">
   <img src="public/futureyou.gif" alt="A gif of a letter from future you (light mode)" title="A letter from future you gif" width="70%">
-</p> -->
+</p>
 <p align="center">
   <img src="public/images/screenshot-1.png" alt="A letter from future you (dark mode)" title="A letter from future you" width="70%">
 </p>
