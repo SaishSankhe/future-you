@@ -1,5 +1,5 @@
+import Letter from "@/components/Letter";
 import Loading from "@/components/Loading";
-import Note from "@/components/Note";
 import getNote from "@/utils/getNoteFromDb";
 import dynamic from "next/dynamic";
 import { Delius } from "next/font/google";
@@ -53,7 +53,11 @@ export default function Home() {
         <ThemeToggle />
 
         <div className="flex flex-col justify-center items-center mx-10 md:m-auto md:max-w-xl text-2xl md:text-2xl min-h-screen">
-          {loading ? <Loading setLoading={setLoading} /> : <Note note={note} />}
+          {loading ? (
+            <Loading setLoading={setLoading} />
+          ) : (
+            <Letter note={note} />
+          )}
         </div>
       </main>
     </>
